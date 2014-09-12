@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>database</type>
+        <description>Language labels for the Tag Cloud extension in the Backend</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="generally.title">Generally</label>
+            <label index="generally.settings.jqueryNoConflict">jQueryNoConflict (Default: true)</label>
+            <label index="visualisation.settings.shape">JavaScript in header/ footer (Default: header)</label>
+            <label index="visualisation.settings.shape.select.sphere">sphere</label>
+            <label index="visualisation.settings.shape.select.hcylinder">sphere</label>
+            <label index="generally.settings.cssId">Css Id (Required)</label>
+            <label index="generally.settings.width">Width (Default: 300)</label>
+            <label index="generally.settings.height">Height (Default: 300)</label>
+            <label index="generally.settings.tt_newsCategoryMenuPid">tt_news Category menu page (Required)</label>
+            <label index="generally.settings.tt_newsCategoryNestinglevel">Recursion | get subcategories from selected
+                below (Default: 3)
+            </label>
+            <label index="generally.settings.categorySelection">Categories Selection | Shows only categories and their
+                subcategories if they has visible news. (Required)
+            </label>
+            <label index="visualisation.title">Visualisation</label>
+            <label index="visualisation.settings.shape">Shape | The shape of the cloud. Currently supported are sphere,
+                hcylinder for a cylinder that starts off horizontal, vcylinder for a cylinder that starts off vertical,
+                hring for a horizontal circle and vring for a vertical circle. (Default: sphere)
+            </label>
+            <label index="visualisation.settings.shape.select.sphere">sphere</label>
+            <label index="visualisation.settings.shape.select.hcylinder">sphere</label>
+            <label index="visualisation.settings.shape.select.vcylinder">sphere</label>
+            <label index="visualisation.settings.shape.select.hring">sphere</label>
+            <label index="visualisation.settings.shape.select.vring">sphere</label>
+            <label index="visualisation.settings.textColour">textColour | Colour of the tag text. (Default: #ff99ff)
+            </label>
+            <label index="visualisation.settings.textHeight">textHeight | Height of the tag text font (in pixels).
+                (Default: 15)
+            </label>
+            <label index="visualisation.settings.txtOpt">txtOpt | Text optimisation, converts text tags to images for
+                better performance. (Default: active)
+            </label>
+            <label index="visualisation.settings.select.active">active</label>
+            <label index="visualisation.settings.select.active">inactive</label>
+            <label index="visualisation.settings.backgroundColor">backgroundColor | Backgroundcolor for the container.
+                (Default: transparent)
+            </label>
+            <label index="visualisation.settings.txtScale">txtScale | Scaling factor of text when converting to image in
+                txtOpt mode. (Default: 2)
+            </label>
+            <label index="visualisation.settings.shadow">shadow | Colour of the shadow behind each tag. (Default:
+                #000000)
+            </label>
+            <label index="visualisation.settings.shadowBlur">shadowBlur | Amount of tag shadow blurring, in pixels.
+                (Default: 0)
+            </label>
+            <label index="visualisation.settings.shadowOffset">shadowOffset | X and Y offset of the tag shadow, in
+                pixels. (Default: [0,0])
+            </label>
+            <label index="visualisation.settings.outlineColour">outlineColour | Colour of the active tag highlight.
+                (Default: #ffff99)
+            </label>
+            <label index="visualisation.settings.outlineMethod">outlineMethod | Type of highlight to use. Options are:
+                outline for an outline at the same depth as the active tag, classic for the old-style outline on top of
+                all tags, block for a solid block around the active tag, colour to change the colour of the text or
+                image of the current tag to the outlineColour value, none for no highlighting at all. (Default: outline)
+            </label>
+            <label index="visualisation.settings.outlineMethod.select.outline">outline</label>
+            <label index="visualisation.settings.outlineMethod.select.classic">classic</label>
+            <label index="visualisation.settings.outlineMethod.select.block">block</label>
+            <label index="visualisation.settings.outlineMethod.select.colour">colour</label>
+            <label index="visualisation.settings.outlineMethod.select.none">none</label>
+            <label index="visualisation.settings.outlineThickness">outlineThickness | Thickness of outline in pixels.
+                (Default: 2)
+            </label>
+            <label index="visualisation.settings.outlineOffset">outlineOffset | Distance of outline from text, in
+                pixels. This also increases the size of the active area around the tag. (Default: 5)
+            </label>
+            <label index="visualisation.settings.maxBrightness">maxBrightness | Brightness (opacity) of tags at front of
+                cloud. (0.0-1.0). (Default: 1.0)
+            </label>
+            <label index="visualisation.settings.minBrightness">minBrightness | Brightness (opacity) of tags at back of
+                cloud. (0.0-1.0). (Default: 0.1)
+            </label>
+            <label index="animation.title">Animation</label>
+            <label index="animation.settings.fadeIn">fadeIn | Time to fade in tags at start, in milliseconds. (Default:
+                0)
+            </label>
+            <label index="animation.settings.initial">initial | Starting rotation speed, with horizontal and vertical
+                values as an array, e.g. [0.8,-0.3]. Values are multiplied by maxSpeed. (Default: empty)
+            </label>
+            <label index="animation.settings.animTiming">animTiming | The animation timing function for use with the
+                RotateTag and TagToFront functions. The values available are "Smooth" and "Linear". (Default: Smooth)
+            </label>
+            <label index="animation.settings.animTiming.select.Smooth">Smooth</label>
+            <label index="animation.settings.animTiming.select.Linear">Linear</label>
+            <label index="animation.settings.maxSpeed">maxSpeed | Maximum speed of rotation. (Default: 0.05)</label>
+            <label index="animation.settings.minSpeed">minSpeed | Minimum speed of rotation when mouse leaves canvas.
+                (Default: 0.0)
+            </label>
+            <label index="animation.settings.interval">interval | Interval between animation frames, in milliseconds.
+                (Default: 20)
+            </label>
+            <label index="animation.settings.depth">depth | Controls the perspective (0.0-1.0). (Default: 0.5)</label>
+            <label index="animation.settings.pulsateTo">pulsateTo | Pulsate outline to this opacity (0.0-1.0). (Default:
+                1.0)
+            </label>
+            <label index="animation.settings.pulsateTime">pulsateTo | Pulse rate, in seconds per beat. (Default: 3)
+            </label>
+            <label index="weight.title">Weight</label>
+            <label index="weight.settings.weightactive">Set to true to turn on weighting of tags. (Default:
+                deactivated)
+            </label>
+            <label index="weight.settings.weightMode">weightMode | Weight Mode (Default: size)</label>
+            <label index="weight.settings.weightMode.select.size">size</label>
+            <label index="weight.settings.weightMode.select.colour">color</label>
+            <label index="weight.settings.weightMode.select.both">both</label>
+            <label index="weight.settings.weightSize">weightSize | Multiplier for adjusting the size of tags when using
+                a weight mode of size or both. (Default: 1.0)
+            </label>
+            <label index="weight.settings.weightGradient">weightGradient | The colour gradient used for colouring tags
+                when using a weight mode of colour or both. (Default: {0:'#f00', 0.33:'#ff0', 0.66:'#0f0', 1:'#00f'} )
+            </label>
+            <label index="weight.settings.weightSizeMin">weightSizeMin | Minimum font size when weighted sizing is
+                enabled. (Default: empty)
+            </label>
+            <label index="weight.settings.weightSizeMax">weightSizeMax | Maximum font size when weighted sizing is
+                enabled. (Default: empty)
+            </label>
+            <label index="offsetsandradius.title">Offsets, radius and stretch</label>
+            <label index="offsetsandradius.settings.radiusX">radiusX | Initial size of cloud from centre to sides.
+                (Default: 1)
+            </label>
+            <label index="offsetsandradius.settings.radiusY">radiusY | Initial size of cloud from centre to top and
+                bottom. (Default: 1)
+            </label>
+            <label index="offsetsandradius.settings.radiusZ">radiusZ | Initial size of cloud from centre to front and
+                back. (Default: 1)
+            </label>
+            <label index="offsetsandradius.settings.offsetX">offsetX | Offsets the centre of the cloud horizontally.
+                (measured in pixels). (Default: 0)
+            </label>
+            <label index="offsetsandradius.settings.offsetY">offsetY | Offsets the centre of the cloud vertically
+                (measured in pixels). (Default: 0)
+            </label>
+            <label index="offsetsandradius.settings.stretchX">stretchX | Stretch or compress the cloud horizontally.
+                (Default: 1)
+            </label>
+            <label index="offsetsandradius.settings.stretchY">stretchY | Stretch or compress the cloud vertically.
+                (Default: 1)
+            </label>
+            <label index="usability.title">Usability</label>
+            <label index="usability.settings.dragControl">dragControl | When enabled, cloud moves when dragged instead
+                of based on mouse position. (Default: inactive)
+            </label>
+            <label index="usability.settings.select.active">active</label>
+            <label index="usability.settings.select.inactive">inactive</label>
+            <label index="usability.settings.dragThreshold">dragThreshold | The number of pixels that the cursor must
+                move to count as a drag instead of a click. (Default: 4)
+            </label>
+            <label index="usability.settings.decel">decel | Deceleration rate when mouse leaves canvas. (Default:
+                0.95)
+            </label>
+            <label index="usability.settings.freezeActive">freezeActive | Set to active to pause movement when a tag is
+                highlighted. (Default: inactive)
+            </label>
+            <label index="usability.settings.freezeActive.select.active">active</label>
+            <label index="usability.settings.freezeActive.select.inactive">inactive</label>
+            <label index="usability.settings.freezeDecel">freezeDecel | Set to active to decelerate when highlighted
+                tags freeze instead of stopping suddenly. (Default: inactive)
+            </label>
+            <label index="usability.settings.freezeDecel.select.active">active</label>
+            <label index="usability.settings.freezeDecel.select.inactive">inactive</label>
+            <label index="usability.settings.frontSelect">frontSelect | Set to active to prevent selection of tags at
+                back of cloud. (Default: inactive)
+            </label>
+            <label index="usability.settings.frontSelect.select.active">active</label>
+            <label index="usability.settings.frontSelect.select.active">inactive</label>
+            <label index="usability.settings.noSelect">noSelect | Set to active to prevent the selection of tags.
+                (Default: inactive)
+            </label>
+            <label index="usability.settings.noSelect.select.active">active</label>
+            <label index="usability.settings.noSelect.select.active">inactive</label>
+            <label index="usability.settings.noMouse">noMouse | Set to active to prevent any mouse interaction. The
+                initial option must be used to animate the cloud, otherwise it will be motionless. (Default: inactive)
+            </label>
+            <label index="usability.settings.noMouse.select.active">active</label>
+            <label index="usability.settings.noMouse.select.active">inactive</label>
+            <label index="usability.settings.lock">lock | Limits rotation of the cloud using the mouse. A value of "x"
+                limits rotation to the x-axis, "y" limits rotation to the y-axis. A value of "xy" will prevent the cloud
+                rotating in response to the mouse - the cloud will only move if the initial option is used to give it a
+                starting speed. (Default: empty)
+            </label>
+            <label index="usability.settings.wheelZoom">wheelZoom | Enables zooming the cloud in and out using the mouse
+                wheel or scroll gesture. (Default: active)
+            </label>
+            <label index="usability.settings.wheelZoom.select.active">active</label>
+            <label index="usability.settings.wheelZoom.select.active">inactive</label>
+            <label index="usability.settings.zoom">zoom | Adjusts the relative size of the tag cloud in the canvas.
+                Larger values will zoom into the cloud, smaller values will zoom out. (Default: 1.0)
+            </label>
+            <label index="usability.settings.zoomStep">zoomStep | The amount that the zoom is changed by with each
+                movement of the mouse wheel. (Default: 0.05)
+            </label>
+            <label index="usability.settings.zoomMax">zoomMax | Maximum zoom value. (Default: 3.0)</label>
+            <label index="usability.settings.zoomMin">zoomMin | Minimum zoom value. (Default: 0.3)</label>
+            <label index="usability.settings.clickToFront">clickToFront | If set to a number, the selected tag will move
+                to the front in this many milliseconds before activating. (Default: empty)
+            </label>
+            <label index="usability.settings.reverse">reverse | Set to true to reverse direction of movement relative to
+                mouse position.(Default: inactive)
+            </label>
+            <label index="usability.settings.reverse.select.active">active</label>
+            <label index="usability.settings.reverse.select.active">inactive</label>
+        </languageKey>
+
+
+    </data>
+</T3locallang>

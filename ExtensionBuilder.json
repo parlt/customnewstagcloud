@@ -1,0 +1,141 @@
+{"modules": [
+
+    {
+        "config": {
+            "position": [620, 107]
+        },
+        "name": "New Model Object",
+        "value": {
+            "actionGroup": {
+                "_default0_list": true,
+                "_default1_show": false,
+                "_default2_new_create": false,
+                "_default3_edit_update": false,
+                "_default4_delete": false,
+                "customActions": []
+            },
+            "name": "NewsCategory",
+            "objectsettings": {
+                "aggregateRoot": true,
+                "description": "",
+                "mapToTable": "tt_news_cat",
+                "parentClass": "",
+                "sorting": false,
+                "type": "Entity",
+                "uid": "443990331383"
+            },
+            "propertyGroup": {
+                "properties": [
+                    {
+                        "propertyDescription": "",
+                        "propertyIsExcludeField": false,
+                        "propertyIsRequired": true,
+                        "propertyName": "uid",
+                        "propertyType": "Integer",
+                        "uid": "731597801315"
+                    },
+                    {
+                        "propertyDescription": "",
+                        "propertyIsExcludeField": false,
+                        "propertyIsRequired": false,
+                        "propertyName": "pid",
+                        "propertyType": "Integer",
+                        "uid": "371495764216"
+                    },
+                    {
+                        "propertyDescription": "",
+                        "propertyIsExcludeField": false,
+                        "propertyIsRequired": false,
+                        "propertyName": "hidden",
+                        "propertyType": "Integer",
+                        "uid": "963611530526"
+                    },
+                    {
+                        "propertyDescription": "",
+                        "propertyIsExcludeField": false,
+                        "propertyIsRequired": false,
+                        "propertyName": "starttime",
+                        "propertyType": "Date",
+                        "uid": "1116318248635"
+                    },
+                    {
+                        "propertyDescription": "",
+                        "propertyIsExcludeField": false,
+                        "propertyIsRequired": true,
+                        "propertyName": "title",
+                        "propertyType": "String",
+                        "uid": "6387060893"
+                    },
+                    {
+                        "propertyDescription": "",
+                        "propertyIsExcludeField": false,
+                        "propertyIsRequired": false,
+                        "propertyName": "titleLangOl",
+                        "propertyType": "String",
+                        "uid": "533059737790"
+                    },
+                    {
+                        "propertyDescription": "",
+                        "propertyIsExcludeField": false,
+                        "propertyIsRequired": false,
+                        "propertyName": "singlePid",
+                        "propertyType": "Integer",
+                        "uid": "521862103429"
+                    },
+                    {
+                        "propertyDescription": "",
+                        "propertyIsExcludeField": false,
+                        "propertyIsRequired": false,
+                        "propertyName": "parentCategory",
+                        "propertyType": "Integer",
+                        "uid": "135965540927"
+                    }
+                ]
+            },
+            "relationGroup": {
+                "relations": []
+            }
+        }
+    }
+], "properties": {
+    "backendModules": [],
+    "description": "",
+    "emConf": {
+        "category": "plugin",
+        "custom_category": "",
+        "dependsOn": "extbase => 6.0\nfluid => 6.0\ntypo3 => 6.0\n",
+        "disableVersioning": false,
+        "priority": "",
+        "shy": false,
+        "state": "alpha",
+        "targetVersion": "6.0",
+        "version": ""
+    },
+    "extensionKey": "customnewstagcloud",
+    "name": "Custom tt_news Tagcloud",
+    "originalExtensionKey": "customnewstagcloud",
+    "persons": [
+        {
+            "company": "Grafik, Entwicklung & IT Service | Pierre Arlt",
+            "email": "info@pierrearlt.com",
+            "name": "Pierre Arlt",
+            "role": "Developer"
+        }
+    ],
+    "plugins": [
+        {
+            "actions": {
+                "controllerActionCombinations": "News=>list,show\nNewsCategory=>list\n",
+                "noncacheableActions": "",
+                "switchableActions": ""
+            },
+            "key": "customnewstagcloud",
+            "name": "customnewstagcloud"
+        }
+    ],
+    "vendorName": "TYPO3"
+}, "wires": [], "log": {
+    "last_modified": "2014-02-19 08:43",
+    "extension_builder_version": "2.5.2",
+    "be_user": "Pierre Arlt (1)"
+}}

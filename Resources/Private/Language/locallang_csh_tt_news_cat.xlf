@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-19T20:43:42Z" product-name="customnewstagcloud">
+		<header/>
+		<body>
+
+			<trans-unit id="uid.description">
+				<source>uid</source>
+			</trans-unit>
+			<trans-unit id="pid.description">
+				<source>pid</source>
+			</trans-unit>
+			<trans-unit id="hidden.description">
+				<source>hidden</source>
+			</trans-unit>
+			<trans-unit id="starttime.description">
+				<source>starttime</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="title_lang_ol.description">
+				<source>titleLangOl</source>
+			</trans-unit>
+			<trans-unit id="single_pid.description">
+				<source>singlePid</source>
+			</trans-unit>
+			<trans-unit id="parent_category.description">
+				<source>parentCategory</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

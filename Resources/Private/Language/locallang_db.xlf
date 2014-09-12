@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-19T20:43:42Z" product-name="customnewstagcloud">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_customnewstagcloud_domain_model_news">
+				<source>News</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_news.uid">
+				<source>Uid</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_news.pid">
+				<source>Pid</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_news.hidden">
+				<source>Hidden</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_news.starttime">
+				<source>Starttime</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_news.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_news.datetime">
+				<source>Datetime</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_news.language_id">
+				<source>Language Id</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_news.l18nparent">
+				<source>L18nparent</source>
+			</trans-unit>
+			
+			<trans-unit id="tt_news.tx_extbase_type.Tx_Customnewstagcloud_News">
+				<source>Custom tt_news Tagcloud News</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory">
+				<source>News Category</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.uid">
+				<source>Uid</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.pid">
+				<source>Pid</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.hidden">
+				<source>Hidden</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.starttime">
+				<source>Starttime</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.title_lang_ol">
+				<source>Title Lang Ol</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.single_pid">
+				<source>Single Pid</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.parent_category">
+				<source>Parent Category</source>
+			</trans-unit>
+			
+			<trans-unit id="tt_news_cat.tx_extbase_type.Tx_Customnewstagcloud_NewsCategory">
+				<source>Custom tt_news Tagcloud NewsCategory</source>
+			</trans-unit>
+			<trans-unit id="tx_customnewstagcloud_domain_model_newscategory.uri">
+                <source>uri</source>
+           </trans-unit>
+		</body>
+	</file>
+</xliff>

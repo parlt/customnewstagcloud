@@ -1,0 +1,24 @@
+		config.tx_extbase{
+    persistence{
+        storagePid = 10
+        classes{
+            TYPO3\Customnewstagcloud\Domain\Model\NewsCategory {
+                mapping {
+                    tableName = tt_news_cat
+                    recordType = Tx_Customnewstagcloud_NewsCategory
+                    columns {
+                        uid.mapOnProperty                   = uid
+                        pid.mapOnProperty                   = pid
+                        hidden.mapOnProperty                = hidden
+                        starttime.mapOnProperty             = starttime
+                        title.mapOnProperty                 = title
+                        title_lang_ol.mapOnProperty         = titleLangOl
+                        single_pid.mapOnProperty            = singlePid
+                        parent_category.mapOnProperty       = parentCategory
+                    }
+                }
+            }
+            
+    	}
+    }
+}

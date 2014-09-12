@@ -1,0 +1,14 @@
+plugin.tx_customnewstagcloud {
+	view {
+		# cat=plugin.tx_customnewstagcloud/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:customnewstagcloud/Resources/Private/Templates/
+		# cat=plugin.tx_customnewstagcloud/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:customnewstagcloud/Resources/Private/Partials/
+		# cat=plugin.tx_customnewstagcloud/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:customnewstagcloud/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_customnewstagcloud//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

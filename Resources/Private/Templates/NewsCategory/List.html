@@ -1,0 +1,26 @@
+<f:layout name="Default"/>
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <f:flashMessages/>
+    <div id="{containerId}">
+        <canvas width="{width}" height="{height}" id="{cssId}">
+            <ul>
+                <f:for each="{newsCategories}" as="newsCategory">
+                    <li><a href="{newsCategory.uri}" data-weight="{newsCategory.wight}" title="{newsCategory.title}">{newsCategory.title}</a></li>
+                </f:for>
+            </ul>
+        </canvas>
+    </div>
+</f:section>

@@ -1,0 +1,973 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>
+                        Generally
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <!--
+                    <switchableControllerActions>
+                                    <TCEforms>
+                                        <label>action</label>
+                                        <config>
+                                            <type>select</type>
+                                            <items>
+                                                <numIndex index="0">
+                                                    <numIndex index="0">NewsCategory</numIndex>
+                                                    <numIndex index="1">NewsCategory->list;</numIndex>
+                                                </numIndex>
+                                                 <numIndex index="1">
+                                                       <numIndex index="0">News</numIndex>
+                                                       <numIndex index="1">News->list</numIndex>
+                                                   </numIndex>
+                                            </items>
+                                        </config>
+                                    </TCEforms>
+                                </switchableControllerActions>
+                                -->
+                    <settings.jqueryNoConflict>
+                        <TCEforms>
+                            <label>jQueryNoConflict (Default: true)</label>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.jqueryNoConflict>
+                    <settings.javaScriptPosition>
+                        <TCEforms>
+                            <label>JavaScript in header/ footer. (Default: header)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">header</numIndex>
+                                        <numIndex index="1">header</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">footer</numIndex>
+                                        <numIndex index="1">footer</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>header</default>
+                            </config>
+                        </TCEforms>
+                    </settings.javaScriptPosition>
+                    <settings.cssId>
+                        <TCEforms>
+                            <label>Css Id (Required)</label>
+                            <config>
+                                <size>25</size>
+                                <type>input</type>
+                                <eval>required</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.cssId>
+                    <settings.width>
+                        <TCEforms>
+                            <label>Width (Default: 300)</label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>300</default>
+                            </config>
+                        </TCEforms>
+                    </settings.width>
+                    <settings.height>
+                        <TCEforms>
+                            <label>Height (Default: 300)</label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>300</default>
+                            </config>
+                        </TCEforms>
+                    </settings.height>
+                    <settings.tt_newsCategoryMenuPid>
+                        <TCEforms>
+                            <label>tt_news Category menu page (Required)</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>1</minitems>
+                                <show_thumbs>1</show_thumbs>
+                                <eval>required</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.tt_newsCategoryMenuPid>
+                    <settings.tt_newsCategoryNestinglevel>
+                        <TCEforms>
+                            <label>Recursion | get subcategories from selected below (Default: 3)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>3</default>
+                                <eval>required</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.tt_newsCategoryNestinglevel>
+                    <settings.categorySelection>
+                        <TCEforms>
+                            <label>Categories Selection | Shows only categories and their subcategories if they has
+                                visible news. (Required)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <form_type>user</form_type>
+                                <userFunc>tx_ttnews_TCAform_selectTree->renderCategoryFields</userFunc>
+                                <treeView>1</treeView>
+                                <foreign_table>tt_news_cat</foreign_table>
+                                <foreign_table_where>ORDER BY tt_news_cat.sorting</foreign_table_where>
+                                <size>5</size>
+                                <autoSizeMax>10</autoSizeMax>
+                                <minitems>1</minitems>
+                                <maxitems>99</maxitems>
+                                <eval>required</eval>
+                                <itemsHeader>LLL:EXT:tt_news/locallang_tca.xml:tt_news.pi_flexform.itemsHeader
+                                </itemsHeader>
+                                <items type="array">
+                                    <numIndex index="100">
+                                        <numIndex index="0">
+                                            LLL:EXT:tt_news/locallang_tca.xml:tt_news.pi_flexform.category_selection_notCategorized
+                                        </numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                </items>
+                                <allowNonIdValues>1</allowNonIdValues>
+                            </config>
+                        </TCEforms>
+                    </settings.categorySelection>
+                </el>
+            </ROOT>
+        </sDEF>
+        <sVisualisation>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Visualisation</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.shape>
+                        <TCEforms>
+                            <label>Shape | The shape of the cloud. Currently supported are sphere, hcylinder for a
+                                cylinder that starts off horizontal,
+                                vcylinder for a cylinder that starts off vertical, hring for a horizontal circle and
+                                vring for a vertical circle. (Default: sphere)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">sphere</numIndex>
+                                        <numIndex index="1">sphere</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">hcylinder</numIndex>
+                                        <numIndex index="1">hcylinder</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">vcylinder</numIndex>
+                                        <numIndex index="1">vcylinder</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">hring</numIndex>
+                                        <numIndex index="1">hring</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">vring</numIndex>
+                                        <numIndex index="1">vring</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>sphere</default>
+                            </config>
+                        </TCEforms>
+                    </settings.shape>
+                    <settings.textColour>
+                        <TCEforms>
+                            <label>textColour | Colour of the tag text (Default: #ff99ff).</label>
+                            <config>
+                                <size>10</size>
+                                <type>input</type>
+                                <default>#ff99ff</default>
+                            </config>
+                        </TCEforms>
+                    </settings.textColour>
+                    <settings.textHeight>
+                        <TCEforms>
+                            <label>textHeight | Height of the tag text font (in pixels). (Default: 15)</label>
+                            <config>
+                                <size>10</size>
+                                <type>input</type>
+                                <default>15</default>
+                            </config>
+                        </TCEforms>
+                    </settings.textHeight>
+                    <settings.txtOpt>
+                        <TCEforms>
+                            <label>txtOpt | Text optimisation, converts text tags to images for better performance.
+                                (Default: active)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </settings.txtOpt>
+                    <settings.backgroundColor>
+                        <TCEforms>
+                            <label>backgroundColor | Backgroundcolor for the container. (Default: transparent)</label>
+                            <config>
+                                <size>10</size>
+                                <type>input</type>
+                                <default>transparent</default>
+                            </config>
+                        </TCEforms>
+                    </settings.backgroundColor>
+                    <settings.txtScale>
+                        <TCEforms>
+                            <label>txtScale | Scaling factor of text when converting to image in txtOpt mode. (Default:
+                                2)
+                            </label>
+                            <config>
+                                <size>10</size>
+                                <type>input</type>
+                                <default>2</default>
+                            </config>
+                        </TCEforms>
+                    </settings.txtScale>
+                    <settings.shadow>
+                        <TCEforms>
+                            <label>shadow | Colour of the shadow behind each tag. (Default: #000000)</label>
+                            <config>
+                                <size>10</size>
+                                <type>input</type>
+                                <default>#000000</default>
+                            </config>
+                        </TCEforms>
+                    </settings.shadow>
+                    <settings.shadowBlur>
+                        <TCEforms>
+                            <label>shadowBlur | Amount of tag shadow blurring, in pixels. (Default: 0)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.shadowBlur>
+                    <settings.shadowOffset>
+                        <TCEforms>
+                            <label>shadowOffset | X and Y offset of the tag shadow, in pixels. (Default: [0,0])</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>[0,0]</default>
+                            </config>
+                        </TCEforms>
+                    </settings.shadowOffset>
+                    <settings.outlineColour>
+                        <TCEforms>
+                            <label>outlineColour | Colour of the active tag highlight. (Default: #ffff99)</label>
+                            <config>
+                                <size>10</size>
+                                <type>input</type>
+                                <default>#ffff99</default>
+                            </config>
+                        </TCEforms>
+                    </settings.outlineColour>
+                    <settings.outlineMethod>
+                        <TCEforms>
+                            <label>outlineMethod | Type of highlight to use. Options are: outline for an outline at the
+                                same depth as the active tag, classic
+                                for the old-style outline on top of all tags, block
+                                for a solid block around the active tag, colour
+                                to change the colour of the text or image of the current tag to the outlineColour value,
+                                none
+                                for no highlighting at all. (Default: outline)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">outline</numIndex>
+                                        <numIndex index="1">outline</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">classic</numIndex>
+                                        <numIndex index="1">classic</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">block</numIndex>
+                                        <numIndex index="1">block</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">colour</numIndex>
+                                        <numIndex index="1">colour</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">none</numIndex>
+                                        <numIndex index="1">none</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>outline</default>
+                            </config>
+                        </TCEforms>
+                    </settings.outlineMethod>
+                    <settings.outlineThickness>
+                        <TCEforms>
+                            <label>outlineThickness | Thickness of outline in pixels. (Default: 2)</label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>2</default>
+                            </config>
+                        </TCEforms>
+                    </settings.outlineThickness>
+                    <settings.outlineOffset>
+                        <TCEforms>
+                            <label>outlineOffset | Distance of outline from text, in pixels. This also increases the
+                                size of the active area around the tag. (Default: 5)
+                            </label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>5</default>
+                            </config>
+                        </TCEforms>
+                    </settings.outlineOffset>
+                    <settings.maxBrightness>
+                        <TCEforms>
+                            <label>maxBrightness | Brightness (opacity) of tags at front of cloud. (0.0-1.0). (Default:
+                                1.0)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1.0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.maxBrightness>
+                    <settings.minBrightness>
+                        <TCEforms>
+                            <label>minBrightness | Brightness (opacity) of tags at back of cloud. (0.0-1.0). (Default:
+                                0.1)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>0.1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.minBrightness>
+
+                </el>
+            </ROOT>
+        </sVisualisation>
+        <sAnimation>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Animation</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.fadeIn>
+                        <TCEforms>
+                            <label>fadeIn | Time to fade in tags at start, in milliseconds. (Default: 0)</label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.fadeIn>
+                    <settings.initial>
+                        <TCEforms>
+                            <label>initial | Starting rotation speed, with horizontal and vertical values as an array,
+                                e.g. [0.8,-0.3]. Values are multiplied by maxSpeed. (Default: empty)
+                            </label>
+                            <config>
+                                <size>10</size>
+                                <type>input</type>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </settings.initial>
+                    <settings.animTiming>
+                        <TCEforms>
+                            <label>animTiming | The animation timing function for use with the RotateTag and TagToFront
+                                functions. The values available are "Smooth" and "Linear". (Default: Smooth)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Smooth</numIndex>
+                                        <numIndex index="1">Smooth</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Linear</numIndex>
+                                        <numIndex index="1">Linear</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>Smooth</default>
+                            </config>
+                        </TCEforms>
+                    </settings.animTiming>
+                    <settings.maxSpeed>
+                        <TCEforms>
+                            <label>maxSpeed | Maximum speed of rotation. (Default: 0.05)</label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>0.05</default>
+                            </config>
+                        </TCEforms>
+                    </settings.maxSpeed>
+                    <settings.minSpeed>
+                        <TCEforms>
+                            <label>minSpeed | Minimum speed of rotation when mouse leaves canvas. (Default: 0.0)</label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>0.0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.minSpeed>
+                    <settings.interval>
+                        <TCEforms>
+                            <label>interval | Interval between animation frames, in milliseconds. (Default: 20)</label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>20</default>
+                            </config>
+                        </TCEforms>
+                    </settings.interval>
+                    <settings.depth>
+                        <TCEforms>
+                            <label>depth | Controls the perspective (0.0-1.0). (Default: 0.5)</label>
+                            <config>
+                                <size>5</size>
+                                <type>input</type>
+                                <default>0.5</default>
+                            </config>
+                        </TCEforms>
+                    </settings.depth>
+                    <settings.pulsateTo>
+                        <TCEforms>
+                            <label>pulsateTo | Pulsate outline to this opacity (0.0-1.0). (Default: 1.0)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1.0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.pulsateTo>
+                    <settings.pulsateTime>
+                        <TCEforms>
+                            <label>pulsateTo | Pulse rate, in seconds per beat. (Default: 3)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>3</default>
+                            </config>
+                        </TCEforms>
+                    </settings.pulsateTime>
+                </el>
+            </ROOT>
+        </sAnimation>
+        <sWeigt>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Weight</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.weightactive>
+                        <TCEforms>
+                            <label>Set to true to turn on weighting of tags. (Default: deactivated)</label>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.weightactive>
+                    <settings.weightMode>
+                        <TCEforms>
+                            <label>weightMode | Weight Mode (Default: size)</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">size</numIndex>
+                                        <numIndex index="1">size</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">colour</numIndex>
+                                        <numIndex index="1">colour</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">both</numIndex>
+                                        <numIndex index="1">both</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>size</default>
+                            </config>
+                        </TCEforms>
+                    </settings.weightMode>
+                    <settings.weightSize>
+                        <TCEforms>
+                            <label>weightSize | Multiplier for adjusting the size of tags when using a weight mode of
+                                size or both. (Default: 1.0)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1.0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.weightSize>
+                    <settings.weightGradient>
+                        <TCEforms>
+                            <label>weightGradient | The colour gradient used for colouring tags when using a weight mode
+                                of colour or both. (Default: {0:'#f00', 0.33:'#ff0', 0.66:'#0f0', 1:'#00f'} )
+                            </label>
+                            <config>
+                                <size>30</size>
+                                <type>input</type>
+                                <default>{0:'#f00', 0.33:'#ff0', 0.66:'#0f0', 1:'#00f'}</default>
+                            </config>
+                        </TCEforms>
+                    </settings.weightGradient>
+                    <settings.weightSizeMax>
+                        <TCEforms>
+                            <label>weightSizeMax | Maximum font size when weighted sizing is enabled. (Default: empty)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.weightSizeMax>
+                    <settings.weightSizeMin>
+                        <TCEforms>
+                            <label>weightSizeMin | Minimum font size when weighted sizing is enabled. (Default: empty)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.weightSizeMin>
+                </el>
+            </ROOT>
+        </sWeigt>
+        <sOffsetsAndRadius>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Offsets, radius and stretch</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.radiusX>
+                        <TCEforms>
+                            <label>radiusX | Initial size of cloud from centre to sides. (Default: 1)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.radiusX>
+                    <settings.radiusY>
+                        <TCEforms>
+                            <label>radiusY | Initial size of cloud from centre to top and bottom. (Default: 1)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.radiusY>
+                    <settings.radiusZ>
+                        <TCEforms>
+                            <label>radiusZ | Initial size of cloud from centre to front and back. (Default: 1)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.radiusZ>
+                    <settings.offsetX>
+                        <TCEforms>
+                            <label>offsetX | Offsets the centre of the cloud horizontally. (measured in pixels).
+                                (Default: 0)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.offsetX>
+                    <settings.offsetY>
+                        <TCEforms>
+                            <label>offsetY | Offsets the centre of the cloud vertically (measured in pixels). (Default:
+                                0)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.offsetY>
+                    <settings.stretchX>
+                        <TCEforms>
+                            <label>stretchX | Stretch or compress the cloud horizontally. (Default:
+                                1)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.stretchX>
+                    <settings.stretchY>
+                        <TCEforms>
+                            <label>stretchY | Stretch or compress the cloud vertically. (Default:
+                                1)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.stretchY>
+                </el>
+            </ROOT>
+        </sOffsetsAndRadius>
+        <sUsability>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Usability</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.dragControl>
+                        <TCEforms>
+                            <label>dragControl | When enabled, cloud moves when dragged instead of based on mouse
+                                position. (Default: inactive)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+
+                    </settings.dragControl>
+                    <settings.dragThreshold>
+                        <TCEforms>
+                            <label>dragThreshold | The number of pixels that the cursor must move to count as a drag
+                                instead of a click. (Default: 4)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>4</default>
+                            </config>
+                        </TCEforms>
+                    </settings.dragThreshold>
+                    <settings.decel>
+                        <TCEforms>
+                            <label>decel | Deceleration rate when mouse leaves canvas. (Default: 0.95)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>0.95</default>
+                            </config>
+                        </TCEforms>
+                    </settings.decel>
+                    <settings.freezeActive>
+                        <TCEforms>
+                            <label>freezeActive | Set to active to pause movement when a tag is highlighted. (Default:
+                                inactive)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </settings.freezeActive>
+                    <settings.freezeDecel>
+                        <TCEforms>
+                            <label>freezeDecel | Set to active to decelerate when highlighted tags freeze instead of
+                                stopping suddenly. (Default: inactive)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </settings.freezeDecel>
+                    <settings.frontSelect>
+                        <TCEforms>
+                            <label>frontSelect | Set to active to prevent selection of tags at back of cloud. (Default:
+                                inactive)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </settings.frontSelect>
+                    <settings.noSelect>
+                        <TCEforms>
+                            <label>noSelect | Set to active to prevent the selection of tags. (Default: inactive)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </settings.noSelect>
+                    <settings.noMouse>
+                        <TCEforms>
+                            <label>noMouse | Set to active to prevent any mouse interaction. The initial option must be
+                                used to animate the cloud, otherwise it will be motionless. (Default: inactive)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </settings.noMouse>
+                    <settings.lock>
+                        <TCEforms>
+                            <label>lock | Limits rotation of the cloud using the mouse. A value of "x" limits rotation
+                                to the x-axis, "y" limits rotation to the y-axis. A value of "xy" will prevent the cloud
+                                rotating in response to the mouse - the cloud will only move if the initial option is
+                                used to give it a starting speed. (Default: empty)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </settings.lock>
+                    <settings.wheelZoom>
+                        <TCEforms>
+                            <label>wheelZoom | Enables zooming the cloud in and out using the mouse wheel or scroll
+                                gesture. (Default: active)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </settings.wheelZoom>
+                    <settings.zoom>
+                        <TCEforms>
+                            <label>zoom | Adjusts the relative size of the tag cloud in the canvas. Larger values will
+                                zoom into the cloud, smaller values will zoom out. (Default: 1.0)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>1.0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.zoom>
+                    <settings.zoomStep>
+                        <TCEforms>
+                            <label>zoomStep | The amount that the zoom is changed by with each movement of the mouse
+                                wheel. (Default: 0.05)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>0.05</default>
+                            </config>
+                        </TCEforms>
+                    </settings.zoomStep>
+                    <settings.zoomMax>
+                        <TCEforms>
+                            <label>zoomMax | Maximum zoom value. (Default: 3.0)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>3.0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.zoomMax>
+                    <settings.zoomMin>
+                        <TCEforms>
+                            <label>zoomMin | Minimum zoom value. (Default: 0.3)</label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default>0.3</default>
+                            </config>
+                        </TCEforms>
+                    </settings.zoomMin>
+                    <settings.clickToFront>
+                        <TCEforms>
+                            <label>clickToFront | If set to a number, the selected tag will move to the front in this
+                                many milliseconds before activating. (Default: empty)
+                            </label>
+                            <config>
+                                <size>4</size>
+                                <type>input</type>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </settings.clickToFront>
+                    <settings.reverse>
+                        <TCEforms>
+                            <label>reverse | Set to true to reverse direction of movement relative to mouse position.
+                                (Default: inactive)
+                            </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">active</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">inactive</numIndex>
+                                        <numIndex index="1">false</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </settings.reverse>
+                </el>
+            </ROOT>
+        </sUsability>
+    </sheets>
+</T3DataStructure>
